@@ -6,6 +6,7 @@ define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
             templateString: movieWidgetTemplate,
             movie: null,
             baseClass: "movieWidget",
+            labels: movieWidgetNls,
 
             constructor: function (params) {
                 this.movie = params.movie;
@@ -14,10 +15,6 @@ define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
             postCreate: function () {
                 this.inherited(arguments);
                 console.log("postCreate");
-                this.movieWidgetLegend.textContent = movieWidgetNls.movieWidgetLegend;
-                this.imdbLabel.textContent = movieWidgetNls.imdbLabel + ':';
-                this.titleLabel.textContent = movieWidgetNls.titleLabel + ':';
-                this.yearLabel.textContent = movieWidgetNls.yearLabel + ':';
             },
 
             startup: function () {
