@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="movieWidget/css/movieWidget.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<script>
+    // this block must come before the script that loads dojo
+    // dojoConfig variable is used to configure dojo
+    var dojoConfig = {
+        async: true,
+        parseOnLoad: false,
+        isDebug: true,
+        basePath: "../lib/dojo/dojo.js",
+        locale: 'nl',
+        extraLocale: ['en'],
+        packages: [
+            {name: "app", location: "../../src"}
+        ]
+    };
+</script>
+<script src="../lib/dojo/dojo.js">
+</script>
+<script>
+    require(["dojo/parser", "app/movieWidget/MovieWidget", "dojo/domReady!"], function (parser, MovieWidget) {
+        parser.parse().then(function () {
+            var page = new MovieWidget({imdb: 'tt0133093', title: 'The Matrix', year: 1999}, "page");
+            page.startup();
+        });
+    });
+</script>
+<div id="page">
+</div>
+</body>
+</html>
