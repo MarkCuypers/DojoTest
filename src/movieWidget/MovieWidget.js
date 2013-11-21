@@ -1,7 +1,7 @@
 // app/movieWidget/MovieWidget.js
 define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
-    "dojo/text!./templates/MovieWidget.html", "dojo/text!./css/movieWidget.css", "dojo/i18n!./nls/MovieWidget", "dojo/domReady!"],
-    function (declare, _WidgetBase, _TemplatedMixin, movieWidgetTemplate, movieWidgetStyle, movieWidgetNls) {
+    "dojo/text!./templates/MovieWidget.html", "dojo/i18n!./nls/MovieWidget", "xstyle!./css/movieWidget.css", "dojo/domReady!"],
+    function (declare, _WidgetBase, _TemplatedMixin, movieWidgetTemplate, movieWidgetNls) {
         return declare([_WidgetBase, _TemplatedMixin], {
             templateString: movieWidgetTemplate,
             movie: null,
