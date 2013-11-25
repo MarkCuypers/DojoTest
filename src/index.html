@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tutorial: Hello Dojo!</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="app/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <script>
@@ -13,18 +13,18 @@
         async: true,
         parseOnLoad: false,
         isDebug: true,
-        basePath: "../lib/dojo/dojo.js",
+        basePath: "../src/lib/dojo/dojo.js",
         locale: 'nl',
         extraLocale: ['en'],
         packages: [
-            {name: "app", location: "../../src"},
+            {name: "app", location: "../../app"},
             {name: "xstyle", location: "../../lib/xstyle"},
             {name: "put-selector", location: "../../lib/put-selector"},
             {name: "dgrid", location: "../../lib/dgrid"}
         ]
     };
 </script>
-<script src="../lib/dojo/dojo.js">
+<script src="../src/lib/dojo/dojo.js">
 </script>
 <script>
     require(["dojo/parser", "app/movieWidget/MovieWidget", "dojo/domReady!"], function (parser, MovieWidget) {
