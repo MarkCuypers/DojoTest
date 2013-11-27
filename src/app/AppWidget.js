@@ -3,7 +3,7 @@ define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
     "dojo/text!./templates/AppWidget.html", "dojo/i18n!./nls/app",
 
     "dojox/mobile/parser", "dojox/mobile", "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/View",
-    "xstyle!./css/app.css",
+    //"xstyle!./css/app.css",
     "dojo/domReady!"
 ],
     function (declare, _WidgetBase, _TemplatedMixin,

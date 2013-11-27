@@ -1,0 +1,20 @@
+.appWidget {
+    height: 100%;
+}
+
+.appWidget .content {
+    height: 90%;
+}
+
+.appWidget .tabbar {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.appWidget .tabbar li {
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+}

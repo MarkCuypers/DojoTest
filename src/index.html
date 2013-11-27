@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>My Dojo Test App</title>
     <meta charset="utf-8">
     <meta name="viewport"
-          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>My Dojo Test App</title>
-    <script>
+    <script type="text/javascript">
         // this block must come before the script that loads dojo
         // dojoConfig variable is used to configure dojo
         var dojoConfig = {
             async: true,
             parseOnLoad: false,
-            mblAlwaysHideAddressBar:true,
+            mblAlwaysHideAddressBar: true,
             isDebug: true,
-            basePath: "../src/lib/dojo/dojo.js",
             locale: 'nl',
-            extraLocale: ['en'],
             packages: [
                 {name: "app", location: "../../app"},
                 {name: "dojox", location: "../../lib/dojox"},
@@ -29,27 +26,19 @@
             ]
         };
     </script>
-    <!--<script src="lib/dojox/mobile/deviceTheme.js"></script>-->
-    <script src="../src/lib/dojo/dojo.js"></script>
+    <script src="lib/dojox/mobile/deviceTheme.js"></script>
+    <script src="lib/dojo/dojo.js"></script>
     <script>
         require([
-            "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojox/mobile",
-            "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/View"
-        ], function (parser, deviceTheme) {
+            "dojo/parser", "app/AppWidget", "dojo/domReady!"
+        ], function (parser, AppWidget) {
+            var app = new AppWidget({}, "app");
+            app.startup();
             parser.parse();
         });
     </script>
 </head>
 <body>
-<div id="app">
-    <div>
-        <div id="musicTab" data-dojo-type="dojox/mobile/View">Music</div>
-        <div id="moviesTab" data-dojo-type="dojox/mobile/View">Movies</div>
-    </div>
-    <ul data-dojo-type="dojox/mobile/TabBar" data-dojo-props="single: true, fixed: 'bottom'">
-        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'musicTab'">Music</li>
-        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'moviesTab'">Movies</li>
-    </ul>
-</div>
+<div id="app"></div>
 </body>
 </html>
