@@ -1,18 +1,17 @@
-// app/main.js
 define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
     "dojo/text!./templates/AppWidget.html", "dojo/i18n!./nls/app",
+    "app/movieWidget/MovieWidget",
 
-    "dojox/mobile/parser", "dojox/mobile", "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/View",
-    //"xstyle!./css/app.css",
-    "dojo/domReady!"
+    "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/ScrollableView",
+    "dojox/mobile/RoundRect",
+    "xstyle/css!./css/appWidget.css"
 ],
-    function (declare, _WidgetBase, _TemplatedMixin,
-              template, nls) {
+    function (declare, _WidgetBase, _TemplatedMixin, template, nls) {
         return declare([_WidgetBase, _TemplatedMixin], {
             templateString: template,
             baseClass: "AppWidget",
             labels: nls,
-            appWidgetNode: null,
+            movieWidget: null,
 
             constructor: function (params) {
                 this.inherited(arguments);
@@ -24,7 +23,7 @@ define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
                 console.log("main.postCreate");
             },
 
-            startup: function() {
+            startup: function () {
                 this.inherited(arguments);
                 console.log("main.startup");
             }

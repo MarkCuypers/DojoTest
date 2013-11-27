@@ -1,8 +1,5 @@
-<fieldset data-dojo-attach-point="movieWidgetNode">
-    <legend data-dojo-attach-point="movieWidgetLegend">${labels.movieWidgetLegend}</legend>
-    <ul class="movieProperties" data-dojo-type="dojox.mvc.Group" data-dojo-props="ref: 'movie'">
-        <li><strong data-dojo-attach-point="imdbLabel">${labels.imdbLabel}</strong><span data-dojo-attach-point="imdbNode"><a href="http://www.imdb.com/title/${imdb}">${imdb}</a></span></li>
-        <li><strong data-dojo-attach-point="titleLabel">${labels.titleLabel}</strong><span data-dojo-attach-point="titleNode">${title}</span></li>
-        <li><strong data-dojo-attach-point="yearLabel">${labels.yearLabel}</strong><span data-dojo-attach-point="yearNode">${year}</span></li>
-    </ul>
-</fieldset>
+<ul class="movieProperties" data-dojo-type="dojox.mvc.Group" data-dojo-props="ref: 'movie'">
+    <li><strong data-dojo-attach-point="imdbLabel">${labels.imdbLabel}</strong><span data-dojo-attach-point="imdbNode"><a href="http://www.imdb.com/title/${imdb}">${imdb}</a></span></li>
+    <li><strong data-dojo-attach-point="titleLabel">${labels.titleLabel}</strong><span data-dojo-attach-point="titleNode">${title}</span></li>
+    <li><strong data-dojo-attach-point="yearLabel">${labels.yearLabel}</strong><span data-dojo-attach-point="yearNode">${year}</span></li>
+</ul>
