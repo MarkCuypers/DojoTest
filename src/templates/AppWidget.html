@@ -1,0 +1,10 @@
+<div class="appWidget" >
+    <div>
+        <div id="musicTab" data-dojo-type="dojox/mobile/View">Music</div>
+        <div id="moviesTab" data-dojo-type="dojox/mobile/View">Movies</div>
+    </div>
+    <ul data-dojo-type="dojox/mobile/TabBar" data-dojo-props="single: true, fixed: 'bottom'">
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'musicTab'">${labels.music}</li>
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'moviesTab'">${labels.movies}</li>
+    </ul>
+</div>

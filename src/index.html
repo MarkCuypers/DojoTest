@@ -2,39 +2,54 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Tutorial: Hello Dojo!</title>
-    <link href="app/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>My Dojo Test App</title>
+    <script>
+        // this block must come before the script that loads dojo
+        // dojoConfig variable is used to configure dojo
+        var dojoConfig = {
+            async: true,
+            parseOnLoad: false,
+            mblAlwaysHideAddressBar:true,
+            isDebug: true,
+            basePath: "../src/lib/dojo/dojo.js",
+            locale: 'nl',
+            extraLocale: ['en'],
+            packages: [
+                {name: "app", location: "../../app"},
+                {name: "dojox", location: "../../lib/dojox"},
+                {name: "dijit", location: "../../lib/dijit"},
+                {name: "util", location: "../../lib/util"},
+                {name: "xstyle", location: "../../lib/xstyle"},
+                {name: "put-selector", location: "../../lib/put-selector"},
+                {name: "dgrid", location: "../../lib/dgrid"}
+            ]
+        };
+    </script>
+    <!--<script src="lib/dojox/mobile/deviceTheme.js"></script>-->
+    <script src="../src/lib/dojo/dojo.js"></script>
+    <script>
+        require([
+            "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojox/mobile",
+            "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/View"
+        ], function (parser, deviceTheme) {
+            parser.parse();
+        });
+    </script>
 </head>
 <body>
-<script>
-    // this block must come before the script that loads dojo
-    // dojoConfig variable is used to configure dojo
-    var dojoConfig = {
-        async: true,
-        parseOnLoad: false,
-        isDebug: true,
-        basePath: "../src/lib/dojo/dojo.js",
-        locale: 'nl',
-        extraLocale: ['en'],
-        packages: [
-            {name: "app", location: "../../app"},
-            {name: "xstyle", location: "../../lib/xstyle"},
-            {name: "put-selector", location: "../../lib/put-selector"},
-            {name: "dgrid", location: "../../lib/dgrid"}
-        ]
-    };
-</script>
-<script src="../src/lib/dojo/dojo.js">
-</script>
-<script>
-    require(["dojo/parser", "app/movieWidget/MovieWidget", "dojo/domReady!"], function (parser, MovieWidget) {
-        parser.parse().then(function () {
-            var page = new MovieWidget({imdb: 'tt0133093', title: 'The Matrix', year: 1999}, "page");
-            page.startup();
-        });
-    });
-</script>
-<div id="page">
+<div id="app">
+    <div>
+        <div id="musicTab" data-dojo-type="dojox/mobile/View">Music</div>
+        <div id="moviesTab" data-dojo-type="dojox/mobile/View">Movies</div>
+    </div>
+    <ul data-dojo-type="dojox/mobile/TabBar" data-dojo-props="single: true, fixed: 'bottom'">
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'musicTab'">Music</li>
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'moviesTab'">Movies</li>
+    </ul>
 </div>
 </body>
 </html>
