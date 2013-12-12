@@ -1,17 +1,22 @@
 <div class="appWidget">
-    <ul class="tabbar" data-dojo-type="dojox/mobile/TabBar" data-dojo-props="barType: 'standardTab', syncWithViews: true, single: true, fixed: 'bottom', fill: 'always'">
-        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'musicTab',transition: 'slide'">${labels.music}</li>
-        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'moviesTab',transition: 'slide'">${labels.movies}</li>
+    <ul class="tabbar" data-dojo-type="dojox/mobile/TabBar"
+        data-dojo-props="barType: 'standardTab', syncWithViews: true, single: true, fixed: 'bottom', fill: 'always'">
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'musicTab',transition: 'slide'">
+            ${labels.music}
+        </li>
+        <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo: 'moviesTab',transition: 'slide'">
+            ${labels.movies}
+        </li>
     </ul>
     <div class="content">
         <div id="musicTab" data-dojo-type="dojox/mobile/ScrollableView">
-            <div data-dojo-type="dojox/mobile/RoundRect">
-                here comes the music
-            </div>
+            <div data-dojo-type="app/musicWidget/MusicWidget" data-dojo-attach-point="musicWidget"></div>
         </div>
         <div id="moviesTab" data-dojo-type="dojox/mobile/ScrollableView">
             <div data-dojo-type="dojox/mobile/RoundRect">
-                <div data-dojo-type="app/movieWidget/MovieWidget" data-dojo-props="imdb: 'tt0133093', year: 1999, title:'The Matrix'" data-dojo-attach-point="movieWidget"></div>
+                <div data-dojo-type="app/movieWidget/MovieWidget"
+                     data-dojo-props="imdb: 'tt0133093', year: 1999, title:'The Matrix'"
+                     data-dojo-attach-point="movieWidget"></div>
             </div>
         </div>
     </div>

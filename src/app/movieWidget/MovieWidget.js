@@ -14,12 +14,12 @@ define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
 
             postCreate: function () {
                 this.inherited(arguments);
-                console.log("postCreate");
+                console.log(this.baseClass+": postCreate");
             },
 
             startup: function () {
                 this.inherited(arguments);
-                console.log("startup");
+                console.log(this.baseClass+": startup");
             }
         });
     });
