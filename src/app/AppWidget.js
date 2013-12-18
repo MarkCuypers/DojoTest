@@ -1,6 +1,5 @@
 define(["dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
     "dojo/text!./templates/AppWidget.html", "dojo/i18n!./nls/app",
-    "app/movieWidget/MovieWidget", "app/musicWidget/MusicWidget",
 
     "dojox/mobile/TabBar", "dojox/mobile/TabBarButton", "dojox/mobile/ScrollableView",
     "dojox/mobile/RoundRect",
